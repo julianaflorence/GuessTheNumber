@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>
+        Welcome to guess the number! This page uses JavaScript to allow the page to select a number, 
+        and the user inserts their guesses. The user will be informed if the need to guess higher 
+        or lower until they guess correctly. Once guessed correctly, the page will inform the user as 
+        well as letting them know how many times it took to guess correctly! 
+    </h1> 
+	<script>
+        let num = Math.floor(Math.random() * 100) + 1;
+        let guess = prompt("guess a number between 1 and 100");
+        let gotIt = false; 
+        let numGuesses = 0;
+
+        while(gotIt === false){
+            numGuesses++;
+            if(num == guess)
+            {
+    
+                gotIt = true; // break out of loop
+            }else{//if incorrect
+                if(num > guess){ // guess higher
+                    guess = prompt("higher");
+
+                }else{//guess lower
+                    guess = prompt("lower");
+
+                }
+
+
+            }
+
+        }
+
+        alert("Congratulations! You guessed " + num + " ,and it took you " + numGuesses + " guesses");
+    
+
+
+	</script>
+</body>
+</html>
